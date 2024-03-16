@@ -12,6 +12,8 @@ public class Surgery : MonoBehaviour
     public Tilemap Heart;
     public Tilemap BackRibs;
 
+    public GameObject BloodEffect;
+
     private List<Vector3Int> cellsToRemove = new List<Vector3Int>();
 
     private Vector3Int lastcell;
@@ -55,6 +57,7 @@ public class Surgery : MonoBehaviour
             else
             {
                 Skin.SetTile(cell, null);
+                Instantiate(BloodEffect, cell, Quaternion.identity);
             }
         }
         else if (FrontRibs.HasTile(cell))
@@ -85,6 +88,8 @@ public class Surgery : MonoBehaviour
             else
             {
                 Lungs.SetTile(cell, null);
+                Instantiate(BloodEffect, cell, Quaternion.identity);
+                Instantiate(BloodEffect, cell, Quaternion.identity);
             }
         }
         else if (Heart.HasTile(cell))
@@ -97,12 +102,16 @@ public class Surgery : MonoBehaviour
                     Heart.SetTile(pos, null);
                     successfulCollection++;
                 }
+                successfulCollection = Mathf.Clamp(successfulCollection, 0, 46);
                 //46 total tiles in heart
-                Debug.Log("£"+(successfulCollection / 46) * heartValue);
+                Debug.Log("£"+((float)successfulCollection / 46f) * heartValue);
             }
             else
             {
                 Heart.SetTile(cell, null);
+                Instantiate(BloodEffect, cell, Quaternion.identity);
+                Instantiate(BloodEffect, cell, Quaternion.identity);
+                Instantiate(BloodEffect, cell, Quaternion.identity);
             }
         }
 

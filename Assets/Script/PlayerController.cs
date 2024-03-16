@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     {
         float speed = 4.0f;
         rb.velocity = new Vector2(Input.GetAxis("Horizontal"),
-       Input.GetAxis("Vertical")) * speed;
+       Input.GetAxis("Vertical")).normalized * speed;
     }
     // Update is called once per frame
     void Update()
