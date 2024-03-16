@@ -9,37 +9,42 @@ public class Image : MonoBehaviour
 {
     public string FileName;
     public RenderTexture RT;
-    public Texture2D TD;
+    public GameObject RenderCamera;
+    public RawImage RI;
+    //public Texture2D TD;
 
     void getImage()
     {
-        TD = new Texture2D(RT.width, RT.height, TextureFormat.ARGB32, false);
+        Texture2D texture = new Texture2D(RT.width, RT.height, TextureFormat.ARGB32, false);
         RenderTexture.active = RT;
-        TD.ReadPixels(new Rect(0,0,RT.width, RT.height), 0,0);
-        TD.Apply();
+        texture.ReadPixels(new Rect(0,0,RT.width, RT.height), 0,0);
+        texture.Apply();
         string path = Application.persistentDataPath + "/" + FileName + ".png";
-        byte[] bytes = TD.EncodeToPNG();
+        byte[] bytes = texture.EncodeToPNG();
         File.WriteAllBytes(path, bytes);
     }
 
     void SetImage()
     {
-        TD = new Texture2D(RT.width, RT.height);
+        Texture2D texture2D = new Texture2D(RT.width, RT.height);
         string Path = Application.persistentDataPath + "/" + FileName + ".png";
         byte[] by = File.ReadAllBytes(Path);
-        TD.LoadImage(by);
-        TD.Apply();
+        texture2D.LoadImage(by);
+        texture2D.Apply();
     }
 
     IEnumerator Process()
     {
+        RenderCamera.SetActive(true);
+        yield return new WaitForSeconds(0.01f);
         getImage();
         yield return new WaitForSeconds(0.1f);
         SetImage();
         yield return new WaitForSeconds(0.3f);
+        RenderCamera.SetActive(false);
     }
 
-    void Start()
+    public void GetSet_btn()
     {
         StartCoroutine(Process());
     }
