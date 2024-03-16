@@ -31,7 +31,7 @@ public class Surgery : MonoBehaviour
     {
         Vector3 MP = Camera.main.ScreenToWorldPoint(new Vector3((Input.mousePosition.x), (Input.mousePosition.y), 0));
         Vector3Int cell = new Vector3Int(Mathf.FloorToInt(MP.x), Mathf.FloorToInt(MP.y), 0);
-        if (Input.GetMouseButton(0) && lastcell != cell) 
+        if (Input.GetMouseButtonDown(0)||(Input.GetMouseButton(0) && lastcell != cell)) 
         {
             lastcell = cell;
             selectTile(cell);
