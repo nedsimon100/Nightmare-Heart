@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class Surgery : MonoBehaviour
 {
@@ -105,6 +106,8 @@ public class Surgery : MonoBehaviour
                 successfulCollection = Mathf.Clamp(successfulCollection, 0, 46);
                 //46 total tiles in heart
                 Debug.Log("£"+((float)successfulCollection / 46f) * heartValue);
+                FindFirstObjectByType<Manager>().money+= ((float)successfulCollection / 46f) * heartValue;
+                FindFirstObjectByType<Manager>().UnLoadSurgery();
             }
             else
             {

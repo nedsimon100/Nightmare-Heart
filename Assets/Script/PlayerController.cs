@@ -1,9 +1,11 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
     Animator anim;
+    public GameObject corpse;
     // Use this for initialization
     void Start()
     {
@@ -25,5 +27,16 @@ public class PlayerController : MonoBehaviour
             anim.speed = 0.0f;
         else
             anim.speed = 1.0f;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(corpse, collision.transform.position, Quaternion.identity);
+            Destroy(collision.gameObject);
+            FindFirstObjectByType<Manager>().LoadSurgery();
+        }
     }
 }
