@@ -7,6 +7,9 @@ TagManager:
   - Lungs
   - Heart
   - NPC
+  - Police
+  - Mafia
+  - Dead
   layers:
   - Default
   - TransparentFX

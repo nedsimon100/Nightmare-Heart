@@ -47,7 +47,19 @@ public class PlayerController : MonoBehaviour
                 attackBool = false;
             }
         }
-        
+        if(collision.gameObject.tag == "Police")
+        {
+            SceneManager.LoadScene("Police");
+        }
+        if (collision.gameObject.tag == "Mafia")
+        {
+            SceneManager.LoadScene("Mafia");
+        }
+        if (collision.gameObject.tag == "Dead")
+        {
+            SceneManager.LoadScene("True");
+        }
+
     }
     public void attackBtn()
     {

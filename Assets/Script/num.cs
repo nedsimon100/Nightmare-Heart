@@ -8,6 +8,9 @@ public class num : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public static int diff;
     public static float pay;
+    public static float sane;
+    public static int kill;
+    public static int day;
     public static int lore;
     // Update is called once per frame
 

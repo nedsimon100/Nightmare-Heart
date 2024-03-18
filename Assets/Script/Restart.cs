@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Restart : MonoBehaviour
 {
+    public TextMeshProUGUI scoreText;
     // Update is called once per frame
     void Update()
     {
@@ -12,5 +14,8 @@ public class Restart : MonoBehaviour
         {
             SceneManager.LoadScene("Over");
         }
+        string ui = "Money Gained = " + num.pay + "\n" + "Insane Level = " + num.sane + "\n" + "Night Lived = " + num.lore + "\n" + 
+            "Kills = " + num.kill;
+        scoreText.text = ui;
     }
 }

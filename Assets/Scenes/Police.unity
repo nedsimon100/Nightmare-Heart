@@ -399,8 +399,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 56.454834, y: 61.92221}
-  m_SizeDelta: {x: 708.5455, y: 206.7624}
+  m_AnchoredPosition: {x: 28.0645, y: 61.92221}
+  m_SizeDelta: {x: 586.9708, y: 206.7624}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1545949939
 MonoBehaviour:
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Sentenced to Life in Prison or waiting death Pentaly
+  m_text: '
 
 '
   m_isRightToLeft: 0
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60.5
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -609,6 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be98cb3b136117c47a8c58e2539c7ad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 1545949939}
 --- !u!114 &1594535789
 MonoBehaviour:
   m_ObjectHideFlags: 0
