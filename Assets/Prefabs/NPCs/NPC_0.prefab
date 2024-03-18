@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 37082916877109378}
   - component: {fileID: 2376273206852556843}
   - component: {fileID: 2473302398241805757}
-  - component: {fileID: 2659179748100202899}
   - component: {fileID: 7093245918006430362}
   - component: {fileID: -3602860705253870307}
   m_Layer: 0
@@ -203,22 +202,6 @@ MonoBehaviour:
   speed: 1
   range: 0.1
   maxDistance: 25
---- !u!208 &2659179748100202899
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205516468502879239}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.075, y: 0.01, z: 0.005}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: -0.03, y: -0.15, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!58 &7093245918006430362
 CircleCollider2D:
   m_ObjectHideFlags: 0
