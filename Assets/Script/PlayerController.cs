@@ -1,11 +1,16 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
     Animator anim;
     public GameObject corpse;
+    public Button KillButton;
+    public GameObject npcToKill;
+
+    public bool attackBool = false;
     // Use this for initialization
     void Start()
     {
@@ -31,12 +36,25 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(collision.gameObject.tag == "NPC")
         {
-            Instantiate(corpse, collision.transform.position, Quaternion.identity);
-            Destroy(collision.gameObject);
-            FindFirstObjectByType<Manager>().LoadSurgery();
+            KillButton.gameObject.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.Space) || attackBool) 
+            {
+                Instantiate(corpse, collision.transform.position, Quaternion.identity);
+                Destroy(collision.gameObject);
+                FindFirstObjectByType<Manager>().LoadSurgery();
+                attackBool = false;
+            }
         }
+        
+    }
+    public void attackBtn()
+    {
+        attackBool = true;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        KillButton.gameObject.SetActive(false);
     }
 }

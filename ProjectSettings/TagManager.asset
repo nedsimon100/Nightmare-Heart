@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Lungs
   - Heart
+  - NPC
   layers:
   - Default
   - TransparentFX
