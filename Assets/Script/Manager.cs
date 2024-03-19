@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Manager : MonoBehaviour
 {
 
     public static Manager Instance;
+
 
     public float money = 0f;
 
@@ -14,13 +16,21 @@ public class Manager : MonoBehaviour
 
     public float insanity = 0f;
 
-    public float night = 0;
+    public float night = 1;
 
     public int kills = 0;
+
+    public bool gameOver=false;
+
     private GameObject[] mainSceneObjects;
 
-    public float nightLength = 240f;
+    public GameObject endOfNightScreen;
+    public GameObject UIScreen;
+
+    public float nightLength = 100f;
     // Start is called before the first frame update
+
+    
 
     private void Awake()
     {
@@ -31,27 +41,65 @@ public class Manager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
             return;
         }
-        newNight();
-        DontDestroyOnLoad(gameObject);
+        quota = 300 + (night * 100);
+
+        Time.timeScale = 1;
+        DontDestroyOnLoad(this.gameObject);
+    }
+    public void endOfNight()
+    {
+        Time.timeScale = 0;
+        
+        if (SceneManager.GetSceneByBuildIndex(1).isLoaded)
+        {
+            gameOver = true;
+            UnLoadSurgery();
+        }
+        
+        FindFirstObjectByType<UI>().nightEnd();
     }
     public void newNight()
     {
-        money -= quota;
+        
 
+
+        SceneManager.LoadScene(0);
+
+        money -= quota;
         night++;
         quota = 300 + (night * 100);
-        Time.timeScale = 1f;
+    }
+
+    public void restart()
+    {
+        
+        SceneManager.LoadScene(0);
+
+        money = 0f;
+
+        insanity = 0f;
+
+        night = 1;
+
+        kills = 0;
+
+        gameOver = false;
+
     }
     private void Update()
     {
+        updateTime();
+    }
+    public void updateTime()
+    {
+        
         if (Time.timeSinceLevelLoad > nightLength)
         {
             Time.timeScale = 0f;
-            
-            //finish night and 
+            endOfNight();
         }
     }
     public void LoadSurgery()
@@ -70,7 +118,7 @@ public class Manager : MonoBehaviour
     public void UnLoadSurgery()
     {
         
-        SceneManager.UnloadSceneAsync(1);
+        
 
         mainSceneObjects = SceneManager.GetSceneAt(0).GetRootGameObjects();
         foreach (GameObject obj in mainSceneObjects)
@@ -78,7 +126,7 @@ public class Manager : MonoBehaviour
             obj.SetActive(true);
         }
 
-        
+        SceneManager.UnloadSceneAsync(1);
 
     }
 

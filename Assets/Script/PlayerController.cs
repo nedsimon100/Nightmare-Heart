@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        Time.timeScale = 1f;
     }
     void FixedUpdate()
     {

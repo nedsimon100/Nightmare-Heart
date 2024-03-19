@@ -109,6 +109,7 @@ public class Surgery : MonoBehaviour
                 FindFirstObjectByType<Manager>().money+= ((float)successfulCollection / 46f) * heartValue;
                 FindFirstObjectByType<Manager>().UnLoadSurgery();
                 FindFirstObjectByType<Manager>().kills++;
+                FindFirstObjectByType<UI>().UpdateMoney();
             }
             else
             {
