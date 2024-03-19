@@ -67,7 +67,7 @@ public class Manager : MonoBehaviour
 
 
         SceneManager.LoadScene(0);
-
+        txt.n = txt.n + 1;
         money -= quota;
         night++;
         quota = 300 + (night * 100);
