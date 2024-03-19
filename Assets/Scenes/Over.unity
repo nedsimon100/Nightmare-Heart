@@ -18062,8 +18062,8 @@ MonoBehaviour:
   night: 1
   kills: 0
   gameOver: 0
-  endOfNightScreen: {fileID: 0}
-  UIScreen: {fileID: 0}
+  endOfNightScreen: {fileID: 815971597}
+  UIScreen: {fileID: 101922668}
   nightLength: 60
 --- !u!4 &52580758
 Transform:
@@ -18930,7 +18930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &437306815
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18947,8 +18947,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 277.9902, y: 132.3544}
-  m_SizeDelta: {x: 277.0338, y: 159.2359}
+  m_AnchoredPosition: {x: -376.22235, y: 165.21527}
+  m_SizeDelta: {x: 990.5849, y: 475.3265}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &437306816
 MonoBehaviour:
@@ -19234,7 +19234,6 @@ GameObject:
   - component: {fileID: 519420033}
   - component: {fileID: 519420035}
   - component: {fileID: 519420034}
-  - component: {fileID: 519420036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -19450,22 +19449,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &519420036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cae1889c4ca0f64989a7c6ae23948a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FileName: Day
-  RT: {fileID: 8400000, guid: d135fecb28209fb44a22d58081db4466, type: 2}
-  RenderCamera: {fileID: 0}
-  RI: {fileID: 0}
 --- !u!1 &519986034
 GameObject:
   m_ObjectHideFlags: 0
@@ -57016,7 +56999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cae1889c4ca0f64989a7c6ae23948a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FileName: Day
+  FileName: Victam
   RT: {fileID: 8400000, guid: d135fecb28209fb44a22d58081db4466, type: 2}
   RenderCamera: {fileID: 2057808853}
   RI: {fileID: 437306816}

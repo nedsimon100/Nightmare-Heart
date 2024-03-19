@@ -38,9 +38,9 @@ public class Image : MonoBehaviour
         RenderCamera.SetActive(true);
         yield return new WaitForSeconds(0.01f);
         getImage();
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.01f);
         SetImage();
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.01f);
         RenderCamera.SetActive(false);
     }
 
