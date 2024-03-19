@@ -40,7 +40,7 @@ public class Manager : MonoBehaviour
     public void newNight()
     {
         money -= quota;
-
+        num.pay = money;
         night++;
         quota = 300 + (night * 100);
         Time.timeScale = 1f;

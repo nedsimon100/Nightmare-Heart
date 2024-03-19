@@ -27,15 +27,13 @@ public class txt : MonoBehaviour
 
         File.AppendAllText(path, content);
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        Createtxt();
-    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(num.lore == 1)
+        {
+            Createtxt();
+        }
     }
 }

@@ -111,6 +111,7 @@ public class Surgery : MonoBehaviour
                 FindFirstObjectByType<Manager>().kills++;
                 num.diff = num.diff + 1;
                 num.lore = num.lore + 1;
+                num.kill = num.kill + 1;
             }
             else
             {

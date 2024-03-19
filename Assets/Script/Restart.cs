@@ -14,8 +14,12 @@ public class Restart : MonoBehaviour
         {
             SceneManager.LoadScene("Over");
         }
-        string ui = "Money Gained = " + num.pay + "\n" + "Insane Level = " + num.sane + "\n" + "Night Lived = " + num.lore + "\n" + 
+        string ui = "Money Gained = " + num.pay + "\n" + "Insane Level = " + num.sane + "\n" + "Night Lived = " + num.diff + "\n" + 
             "Kills = " + num.kill;
         scoreText.text = ui;
+        num.pay = 0;
+        num.sane = 0;
+        num.diff = 0;
+        num.kill = 0;
     }
 }
