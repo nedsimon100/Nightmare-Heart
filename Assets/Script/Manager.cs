@@ -24,9 +24,6 @@ public class Manager : MonoBehaviour
 
     private GameObject[] mainSceneObjects;
 
-    public GameObject endOfNightScreen;
-    public GameObject UIScreen;
-
     public float nightLength = 100f;
     // Start is called before the first frame update
 
@@ -67,7 +64,7 @@ public class Manager : MonoBehaviour
 
 
         SceneManager.LoadScene(0);
-
+        kills = 0;
         money -= quota;
         night++;
         quota = 300 + (night * 100);
