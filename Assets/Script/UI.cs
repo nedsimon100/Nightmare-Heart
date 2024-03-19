@@ -22,15 +22,31 @@ public class UI : MonoBehaviour
 
     public GameObject GameOverScreen;
 
+    public GameObject mainUI;
+
     public GameObject nextnightButton;
+    public GameObject startScreen;
 
     public float time;
 
     public TextMeshProUGUI profitTxt;
 
+    public void startGame()
+    {
+        startScreen.SetActive(false);
+        Time.timeScale = 1;
+        mainUI.SetActive(true);
+    }
 
+    public void newRun()
+    {
+        startScreen.SetActive(true);
+        Time.timeScale = 0;
+        mainUI.SetActive(false);
+    }
     void Start()
     {
+        
         foreach(TextMeshProUGUI quota in QuotaDisplay)
         {
             quota.text = "£" + FindFirstObjectByType<Manager>().quota.ToString();
@@ -41,6 +57,10 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(startScreen.activeSelf == true)
+        {
+            Time.timeScale = 0;
+        }
         UpdateClock();
     }
     public void UpdateMoney()

@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: Nightmare Heart
-  defaultCursor: {fileID: 2800000, guid: ce6b5fdaf498cbb4db361641040c4668, type: 3}
+  defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -159,7 +159,8 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   androidMinAspectRatio: 1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.DefaultCompany.Nightmare-Heart
   buildNumber:
     Bratwurst: 0
     Standalone: 0
@@ -827,8 +828,8 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Nightmare Heart
-  metroPackageVersion: 
+  metroPackageName: NightmareHeart
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -836,7 +837,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Nightmare Heart
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Nightmare Heart
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

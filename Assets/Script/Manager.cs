@@ -43,7 +43,7 @@ public class Manager : MonoBehaviour
         }
         quota = 300 + (night * 100);
 
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
         DontDestroyOnLoad(this.gameObject);
     }
     public void endOfNight()
@@ -68,6 +68,7 @@ public class Manager : MonoBehaviour
         money -= quota;
         night++;
         quota = 300 + (night * 100);
+        FindFirstObjectByType<UI>().startGame();
     }
 
     public void restart()
@@ -83,7 +84,11 @@ public class Manager : MonoBehaviour
 
         kills = 0;
 
+        quota = 300 + (night * 100);
+
         gameOver = false;
+
+        FindFirstObjectByType<UI>().newRun();
 
     }
     private void Update()
