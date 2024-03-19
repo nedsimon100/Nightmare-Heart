@@ -11,5 +11,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Surgery.unity
     guid: ce2219ed70bc06f45b123840dfc63b3d
+  - enabled: 1
+    path: Assets/Scenes/True.unity
+    guid: 6ed6b962ca4ae794b8e4acad7347eac6
+  - enabled: 1
+    path: Assets/Scenes/Police Ending.unity
+    guid: 08c3fb3d822baeb4aba1bc7d285acb87
+  - enabled: 1
+    path: Assets/Scenes/Mafia Ending.unity
+    guid: 059e4f2c253d15c488f6aacd9e288a8e
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
