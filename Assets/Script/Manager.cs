@@ -60,27 +60,27 @@ public class Manager : MonoBehaviour
     }
     public void newNight()
     {
-        
 
+        night++;
 
         SceneManager.LoadScene(0);
         kills = 0;
         money -= quota;
-        night++;
+        
         quota = 300 + (night * 100);
         FindFirstObjectByType<UI>().startGame();
     }
 
     public void restart()
     {
-        
+        night = 1;
         SceneManager.LoadScene(0);
 
         money = 0f;
 
         insanity = 0f;
 
-        night = 1;
+        
 
         kills = 0;
 

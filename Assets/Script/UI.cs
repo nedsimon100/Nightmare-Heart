@@ -46,6 +46,18 @@ public class UI : MonoBehaviour
     }
     void Start()
     {
+        if(FindFirstObjectByType<Manager>().night == 1)
+        {
+            startScreen.SetActive(true);
+            Time.timeScale = 0;
+            mainUI.SetActive(false);
+        }
+        else
+        {
+            startScreen.SetActive(false);
+            Time.timeScale = 1;
+            mainUI.SetActive(true);
+        }
         
         foreach(TextMeshProUGUI quota in QuotaDisplay)
         {
