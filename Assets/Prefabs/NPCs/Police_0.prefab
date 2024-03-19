@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8617719578198202905}
   m_Layer: 0
   m_Name: Police_0
-  m_TagString: Untagged
+  m_TagString: Police
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
